@@ -1006,6 +1006,18 @@
 .contact__grid a:hover {
   color: var(--accent);
 }
+.ig-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+.ig-glyph {
+  flex: none;
+  transition: transform 0.4s ease, color 0.3s ease;
+}
+.ig-link:hover .ig-glyph {
+  transform: rotate(-6deg) scale(1.08);
+}
 
 .footer {
   display: flex;

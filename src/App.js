@@ -465,8 +465,8 @@ function Contact() {
         <h2 className="contact__title" data-reveal>
           Let&rsquo;s throw <em>a shindig.</em>
         </h2>
-        <a className="contact__mail" href="mailto:srujansinghk@gmail.com" data-reveal>
-          srujansinghk@gmail.com
+        <a className="contact__mail" href="mailto:shindigshotcaptures@gmail.com" data-reveal>
+          shindigshotcaptures@gmail.com
           <svg width="40" height="14" viewBox="0 0 40 14">
             <path d="M0 7h36M30 1l6 6-6 6" stroke="currentColor" strokeWidth="1.4" fill="none" />
           </svg>
@@ -491,14 +491,32 @@ function Contact() {
             <span className="contact__label">Elsewhere</span>
             <p>
               <a
+                className="ig-link"
                 href="https://www.instagram.com/shindigshots?igsh=MXN3NzlhOWo2aHA4dw=="
                 target="_blank"
                 rel="noreferrer"
+                aria-label="Instagram — @shindigshots"
               >
+                <svg
+                  className="ig-glyph"
+                  width="18"
+                  height="18"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="1.7"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  aria-hidden="true"
+                >
+                  <rect x="3" y="3" width="18" height="18" rx="5" ry="5" />
+                  <circle cx="12" cy="12" r="4" />
+                  <circle cx="17.5" cy="6.5" r="0.9" fill="currentColor" stroke="none" />
+                </svg>
                 @shindigshots
               </a>
               <br />
-              <a href="mailto:srujansinghk@gmail.com">Inquiries</a>
+              <a href="mailto:shindigshotcaptures@gmail.com">Inquiries</a>
             </p>
           </div>
         </div>
