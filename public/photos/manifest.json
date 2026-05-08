@@ -1,0 +1,161 @@
+{
+  "generated": "2026-05-08T06:10:21.581Z",
+  "count": 22,
+  "hero": "/photos/15.jpg",
+  "items": [
+    {
+      "src": "/photos/01.jpg",
+      "name": "01",
+      "w": 1600,
+      "h": 2000,
+      "ratio": 0.8
+    },
+    {
+      "src": "/photos/02.jpg",
+      "name": "02",
+      "w": 1599,
+      "h": 2000,
+      "ratio": 0.799
+    },
+    {
+      "src": "/photos/03.jpg",
+      "name": "03",
+      "w": 2000,
+      "h": 1250,
+      "ratio": 1.6
+    },
+    {
+      "src": "/photos/04.jpg",
+      "name": "04",
+      "w": 1599,
+      "h": 2000,
+      "ratio": 0.799
+    },
+    {
+      "src": "/photos/05.jpg",
+      "name": "05",
+      "w": 1600,
+      "h": 2000,
+      "ratio": 0.8
+    },
+    {
+      "src": "/photos/06.jpg",
+      "name": "06",
+      "w": 1599,
+      "h": 2000,
+      "ratio": 0.799
+    },
+    {
+      "src": "/photos/07.jpg",
+      "name": "07",
+      "w": 1600,
+      "h": 2000,
+      "ratio": 0.8
+    },
+    {
+      "src": "/photos/08.jpg",
+      "name": "08",
+      "w": 1600,
+      "h": 2000,
+      "ratio": 0.8
+    },
+    {
+      "src": "/photos/09.jpg",
+      "name": "09",
+      "w": 1599,
+      "h": 2000,
+      "ratio": 0.799
+    },
+    {
+      "src": "/photos/10.jpg",
+      "name": "10",
+      "w": 1600,
+      "h": 2000,
+      "ratio": 0.8
+    },
+    {
+      "src": "/photos/11.jpg",
+      "name": "11",
+      "w": 2000,
+      "h": 1125,
+      "ratio": 1.778
+    },
+    {
+      "src": "/photos/12.jpg",
+      "name": "12",
+      "w": 2000,
+      "h": 1125,
+      "ratio": 1.778
+    },
+    {
+      "src": "/photos/13.jpg",
+      "name": "13",
+      "w": 2000,
+      "h": 1125,
+      "ratio": 1.778
+    },
+    {
+      "src": "/photos/14.jpg",
+      "name": "14",
+      "w": 2000,
+      "h": 1125,
+      "ratio": 1.778
+    },
+    {
+      "src": "/photos/15.jpg",
+      "name": "15",
+      "w": 2000,
+      "h": 1124,
+      "ratio": 1.779
+    },
+    {
+      "src": "/photos/16.jpg",
+      "name": "16",
+      "w": 2000,
+      "h": 1124,
+      "ratio": 1.779
+    },
+    {
+      "src": "/photos/17.jpg",
+      "name": "17",
+      "w": 2000,
+      "h": 1124,
+      "ratio": 1.779
+    },
+    {
+      "src": "/photos/18.jpg",
+      "name": "18",
+      "w": 1428,
+      "h": 2000,
+      "ratio": 0.714
+    },
+    {
+      "src": "/photos/19.jpg",
+      "name": "19",
+      "w": 1599,
+      "h": 2000,
+      "ratio": 0.799
+    },
+    {
+      "src": "/photos/20.jpg",
+      "name": "20",
+      "w": 1600,
+      "h": 2000,
+      "ratio": 0.8
+    },
+    {
+      "src": "/photos/21.jpg",
+      "name": "21",
+      "w": 1125,
+      "h": 2000,
+      "ratio": 0.563
+    },
+    {
+      "src": "/photos/22.jpg",
+      "name": "22",
+      "w": 1600,
+      "h": 2000,
+      "ratio": 0.8
+    }
+  ]
+}

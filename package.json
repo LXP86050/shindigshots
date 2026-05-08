@@ -12,6 +12,9 @@
     "web-vitals": "^2.1.4"
   },
   "scripts": {
+    "photos": "node scripts/build-photos.js",
+    "prestart": "node scripts/build-photos.js",
+    "prebuild": "node scripts/build-photos.js",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
