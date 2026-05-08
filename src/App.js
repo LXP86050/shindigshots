@@ -335,16 +335,12 @@ function Work({ items }) {
               key={g.src}
               className={`mtile ${g.ratio && g.ratio > 1.4 ? 'mtile--wide' : ''}`}
               data-reveal
-              style={{ '--delay': `${(i % 8) * 60}ms` }}
+              style={{ '--delay': `${(i % 6) * 40}ms` }}
             >
               <div className="mtile__frame">
-                <img src={g.src} alt={g.name} loading="lazy" />
+                <img src={g.src} alt="" loading="lazy" />
                 <span className="mtile__watermark">Shindig Shots</span>
               </div>
-              <figcaption>
-                <span className="mtile__num">{String(i + 1).padStart(2, '0')}</span>
-                <span className="mtile__title">{g.name}</span>
-              </figcaption>
             </figure>
           ))}
         </div>
@@ -382,11 +378,7 @@ function Pinned({ items }) {
     if (!items.length) return [];
     const wides = items.filter((it) => it.ratio && it.ratio > 1.4);
     const pool = wides.length >= 4 ? wides : items;
-    return pool.slice(0, 6).map((p, i) => ({
-      kicker: `Frame ${String(i + 1).padStart(2, '0')}`,
-      title: p.name,
-      img: p.src,
-    }));
+    return pool.slice(0, 6).map((p) => ({ img: p.src }));
   }, [items]);
 
   useEffect(() => {
@@ -428,11 +420,7 @@ function Pinned({ items }) {
           {slides.map((s, i) => (
             <article className="slide" key={i}>
               <div className="slide__img">
-                <img src={s.img} alt={s.title} loading="lazy" />
-              </div>
-              <div className="slide__meta">
-                <span className="slide__kicker">{s.kicker}</span>
-                <h3 className="slide__title">{s.title}</h3>
+                <img src={s.img} alt="" loading="lazy" />
               </div>
             </article>
           ))}
