@@ -2,3 +2,4 @@ User-agent: *
 Allow: /
 
 Sitemap: https://shindigshots.vercel.app/sitemap.xml
+Sitemap: https://shindigshots.vercel.app/sitemap-1.xml
