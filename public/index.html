@@ -2,14 +2,83 @@
 <html lang="en">
   <head>
     <meta charset="utf-8" />
-    <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="theme-color" content="#0a0a0a" />
+    <meta name="theme-color" content="#0c0a0a" />
+
+    <!-- Icons / manifest -->
+    <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
+    <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" />
+    <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
+
+    <!-- Canonical -->
+    <link rel="canonical" href="https://shindigshots.vercel.app/" />
+
+    <!-- Primary -->
+    <title>shindigshots — Photography Studio · Travel, Weddings, Family, Editorial</title>
     <meta
       name="description"
-      content="shindigshots — A photography studio capturing light, motion, and the in-between."
+      content="shindigshots is a photography studio capturing light, motion, and the in-between. Travel, weddings, family, and editorial work."
     />
-    <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" />
+    <meta name="author" content="shindigshots" />
+    <meta
+      name="keywords"
+      content="shindigshots, photography studio, travel photography, wedding photography, family photography, editorial photography, photographer portfolio"
+    />
+    <meta
+      name="robots"
+      content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1"
+    />
+
+    <!-- Open Graph (LinkedIn, Slack, iMessage, Facebook) -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://shindigshots.vercel.app/" />
+    <meta property="og:site_name" content="shindigshots" />
+    <meta property="og:title" content="shindigshots — Photography Studio" />
+    <meta
+      property="og:description"
+      content="A photography studio capturing light, motion, and the in-between. Travel, weddings, family, editorial."
+    />
+    <meta property="og:image" content="https://shindigshots.vercel.app/og.png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="shindigshots — Photography Studio" />
+    <meta property="og:locale" content="en_US" />
+
+    <!-- Twitter / X -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="shindigshots — Photography Studio" />
+    <meta
+      name="twitter:description"
+      content="A photography studio capturing light, motion, and the in-between."
+    />
+    <meta name="twitter:image" content="https://shindigshots.vercel.app/og.png" />
+
+    <!-- Structured data — ProfessionalService schema for Google -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "ProfessionalService",
+        "name": "shindigshots",
+        "alternateName": "shindigshots Photography",
+        "url": "https://shindigshots.vercel.app/",
+        "logo": "https://shindigshots.vercel.app/logo512.png",
+        "image": "https://shindigshots.vercel.app/og.png",
+        "description": "A photography studio capturing light, motion, and the in-between. Travel, weddings, family, and editorial work.",
+        "priceRange": "$$",
+        "areaServed": "Worldwide",
+        "knowsAbout": [
+          "Photography",
+          "Travel Photography",
+          "Wedding Photography",
+          "Family Photography",
+          "Editorial Photography",
+          "Portrait Photography"
+        ],
+        "additionalType": "https://schema.org/Photograph"
+      }
+    </script>
+
+    <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -17,34 +86,9 @@
       rel="stylesheet"
     />
     <link rel="preconnect" href="https://images.unsplash.com" />
-    <!--
-      manifest.json provides metadata used when your web app is installed on a
-      user's mobile device or desktop. See https://developers.google.com/web/fundamentals/web-app-manifest/
-    -->
-    <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
-    <!--
-      Notice the use of %PUBLIC_URL% in the tags above.
-      It will be replaced with the URL of the `public` folder during the build.
-      Only files inside the `public` folder can be referenced from the HTML.
-
-      Unlike "/favicon.ico" or "favicon.ico", "%PUBLIC_URL%/favicon.ico" will
-      work correctly both with client-side routing and a non-root public URL.
-      Learn how to configure a non-root public URL by running `npm run build`.
-    -->
-    <title>shindigshots — Photography</title>
   </head>
   <body>
     <noscript>You need to enable JavaScript to run this app.</noscript>
     <div id="root"></div>
-    <!--
-      This HTML file is a template.
-      If you open it directly in the browser, you will see an empty page.
-
-      You can add webfonts, meta tags, or analytics to this file.
-      The build step will place the bundled scripts into the <body> tag.
-
-      To begin the development, run `npm start` or `yarn start`.
-      To create a production bundle, use `npm run build` or `yarn build`.
-    -->
   </body>
 </html>

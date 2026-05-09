@@ -1,6 +1,7 @@
 {
-  "short_name": "React App",
-  "name": "Create React App Sample",
+  "short_name": "shindigshots",
+  "name": "shindigshots — Photography Studio",
+  "description": "A photography studio capturing light, motion, and the in-between.",
   "icons": [
     {
       "src": "favicon.ico",
@@ -20,6 +21,6 @@
   ],
   "start_url": ".",
   "display": "standalone",
-  "theme_color": "#000000",
-  "background_color": "#ffffff"
+  "theme_color": "#0c0a0a",
+  "background_color": "#0c0a0a"
 }
