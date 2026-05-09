@@ -97,10 +97,13 @@
   letter-spacing: 0.22em;
 }
 .nav__logo-img {
-  height: 36px;
+  height: clamp(44px, 5vw, 60px);
   width: auto;
   filter: brightness(0) invert(1);
-  transition: filter 0.3s ease, transform 0.5s ease;
+  transition: filter 0.3s ease, transform 0.5s ease, height 0.4s ease;
+}
+.nav--solid .nav__logo-img {
+  height: clamp(38px, 4vw, 48px);
 }
 .nav__brand:hover .nav__logo-img {
   transform: rotate(-3deg);
