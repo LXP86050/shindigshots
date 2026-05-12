@@ -455,6 +455,213 @@ function Services() {
   );
 }
 
+function isValidEmail(s) {
+  if (typeof s !== 'string') return false;
+  const v = s.trim();
+  if (v.length < 6 || v.length > 254) return false;
+  return /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(v);
+}
+
+function isValidPhone(s) {
+  if (typeof s !== 'string') return false;
+  const digits = s.replace(/[^\d]/g, '');
+  return digits.length >= 7 && digits.length <= 15;
+}
+
+function DropNote() {
+  const [form, setForm] = useState({
+    name: '',
+    email: '',
+    phone: '',
+    when: '',
+    message: '',
+    _hp: '',
+  });
+  const [errors, setErrors] = useState({});
+  const [status, setStatus] = useState('idle'); // idle | sending | sent | error
+  const [serverError, setServerError] = useState('');
+
+  const set = (k) => (e) => {
+    setForm((f) => ({ ...f, [k]: e.target.value }));
+    if (errors[k]) setErrors((er) => ({ ...er, [k]: undefined }));
+    if (status === 'error') setStatus('idle');
+  };
+
+  const validate = () => {
+    const errs = {};
+    const msg = form.message.trim();
+    const email = form.email.trim();
+    const phone = form.phone.trim();
+    if (msg.length < 5) errs.message = 'Tell me a bit more about the shoot.';
+    else if (msg.length > 2000) errs.message = 'Keep it under 2,000 characters.';
+    if (!email && !phone) errs.contact = 'Drop an email or phone so I can reach you.';
+    else {
+      if (email && !isValidEmail(email)) errs.email = 'Please enter a valid email.';
+      if (phone && !isValidPhone(phone)) errs.phone = 'Please enter a valid phone number.';
+    }
+    return errs;
+  };
+
+  const onSubmit = async (e) => {
+    e.preventDefault();
+    const errs = validate();
+    setErrors(errs);
+    if (Object.keys(errs).length > 0) return;
+    setStatus('sending');
+    setServerError('');
+    try {
+      const res = await fetch('/api/contact', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(form),
+      });
+      const data = await res.json().catch(() => ({}));
+      if (!res.ok) {
+        setStatus('error');
+        setServerError(
+          data?.error ||
+            "Something went wrong. Try emailing shindigshotcaptures@gmail.com directly."
+        );
+        return;
+      }
+      setStatus('sent');
+      setForm({ name: '', email: '', phone: '', when: '', message: '', _hp: '' });
+    } catch (err) {
+      setStatus('error');
+      setServerError("Network hiccup. Try emailing shindigshotcaptures@gmail.com directly.");
+    }
+  };
+
+  const isSending = status === 'sending';
+  const isSent = status === 'sent';
+
+  return (
+    <div className="note" id="note">
+      <div className="section-label" data-reveal>
+        <span /> Drop a note
+      </div>
+      <h3 className="note__title" data-reveal>
+        Or tell me about the <em>shoot.</em>
+      </h3>
+
+      <form className="note__form" onSubmit={onSubmit} noValidate data-reveal>
+        <input
+          type="text"
+          name="company"
+          tabIndex={-1}
+          autoComplete="off"
+          className="note__hp"
+          value={form._hp}
+          onChange={set('_hp')}
+          aria-hidden="true"
+        />
+
+        <label className="note__field">
+          <span className="note__label">Your name <span className="note__opt">(optional)</span></span>
+          <input
+            type="text"
+            autoComplete="name"
+            maxLength={100}
+            className="note__input"
+            value={form.name}
+            onChange={set('name')}
+            disabled={isSending || isSent}
+            placeholder="So I know who to greet"
+          />
+        </label>
+
+        <div className="note__row">
+          <label className="note__field">
+            <span className="note__label">Email</span>
+            <input
+              type="email"
+              autoComplete="email"
+              maxLength={254}
+              className={`note__input ${errors.email ? 'note__input--err' : ''}`}
+              value={form.email}
+              onChange={set('email')}
+              disabled={isSending || isSent}
+              placeholder="you@example.com"
+              aria-invalid={!!errors.email}
+            />
+            {errors.email && <span className="note__err">{errors.email}</span>}
+          </label>
+          <label className="note__field">
+            <span className="note__label">Phone</span>
+            <input
+              type="tel"
+              autoComplete="tel"
+              maxLength={30}
+              className={`note__input ${errors.phone ? 'note__input--err' : ''}`}
+              value={form.phone}
+              onChange={set('phone')}
+              disabled={isSending || isSent}
+              placeholder="+1 555 555 5555"
+              aria-invalid={!!errors.phone}
+            />
+            {errors.phone && <span className="note__err">{errors.phone}</span>}
+          </label>
+        </div>
+        {errors.contact && !errors.email && !errors.phone && (
+          <div className="note__err note__err--row">{errors.contact}</div>
+        )}
+
+        <label className="note__field">
+          <span className="note__label">When <span className="note__opt">(if you have a date in mind)</span></span>
+          <input
+            type="text"
+            maxLength={100}
+            className="note__input"
+            value={form.when}
+            onChange={set('when')}
+            disabled={isSending || isSent}
+            placeholder="e.g. June 15, 2026 — or this fall"
+          />
+        </label>
+
+        <label className="note__field">
+          <span className="note__label">Tell me about the shoot</span>
+          <textarea
+            rows={5}
+            maxLength={2000}
+            className={`note__input note__textarea ${errors.message ? 'note__input--err' : ''}`}
+            value={form.message}
+            onChange={set('message')}
+            disabled={isSending || isSent}
+            placeholder="What are we celebrating? Where? Style you're after? Anything that'll help me show up ready."
+            aria-invalid={!!errors.message}
+          />
+          <div className="note__count">
+            {errors.message ? (
+              <span className="note__err">{errors.message}</span>
+            ) : (
+              <span className="note__counter">{form.message.length} / 2000</span>
+            )}
+          </div>
+        </label>
+
+        <div className="note__foot">
+          <button
+            type="submit"
+            className="note__send"
+            disabled={isSending || isSent}
+          >
+            {isSent ? 'Sent ✓' : isSending ? 'Sending…' : 'Send it →'}
+          </button>
+          <div className="note__status" role="status" aria-live="polite">
+            {isSent && (
+              <span className="note__ok">Got it — I usually reply within a day.</span>
+            )}
+            {status === 'error' && serverError && (
+              <span className="note__err">{serverError}</span>
+            )}
+          </div>
+        </div>
+      </form>
+    </div>
+  );
+}
+
 function Contact() {
   return (
     <section className="contact" id="contact">
@@ -520,6 +727,8 @@ function Contact() {
             </p>
           </div>
         </div>
+
+        <DropNote />
       </div>
       <footer className="footer">
         <span>© {new Date().getFullYear()} shindigshots</span>
