@@ -1,6 +1,6 @@
 {
-  "generated": "2026-05-08T06:14:32.187Z",
-  "count": 27,
+  "generated": "2026-07-20T22:41:05.375Z",
+  "count": 36,
   "hero": "/photos/15.jpg",
   "items": [
     {
@@ -191,6 +191,69 @@
       "w": 1599,
       "h": 2000,
       "ratio": 0.799
+    },
+    {
+      "src": "/photos/28-summer-picnic.jpg",
+      "name": "Summer Picnic",
+      "w": 2000,
+      "h": 1125,
+      "ratio": 1.778
+    },
+    {
+      "src": "/photos/29-summer-picnic-portrait.jpg",
+      "name": "Summer Picnic Portrait",
+      "w": 1600,
+      "h": 2000,
+      "ratio": 0.8
+    },
+    {
+      "src": "/photos/30-summer-picnic-story.jpg",
+      "name": "Summer Picnic Story",
+      "w": 2000,
+      "h": 1125,
+      "ratio": 1.778
+    },
+    {
+      "src": "/photos/31-summer-picnic-series.jpg",
+      "name": "Summer Picnic Series",
+      "w": 2000,
+      "h": 1125,
+      "ratio": 1.778
+    },
+    {
+      "src": "/photos/32-summer-portrait-closeup.jpg",
+      "name": "Summer Portrait Closeup",
+      "w": 2000,
+      "h": 1125,
+      "ratio": 1.778
+    },
+    {
+      "src": "/photos/33-urban-transit.jpg",
+      "name": "Urban Transit",
+      "w": 1600,
+      "h": 2000,
+      "ratio": 0.8
+    },
+    {
+      "src": "/photos/34-urban-platform.jpg",
+      "name": "Urban Platform",
+      "w": 1600,
+      "h": 2000,
+      "ratio": 0.8
+    },
+    {
+      "src": "/photos/35-vogue-cover.jpg",
+      "name": "Vogue Cover",
+      "w": 1600,
+      "h": 2000,
+      "ratio": 0.8
+    },
+    {
+      "src": "/photos/36-rainbow-crosswalk.jpg",
+      "name": "Rainbow Crosswalk",
+      "w": 1600,
+      "h": 2000,
+      "ratio": 0.8
     }
   ]
 }

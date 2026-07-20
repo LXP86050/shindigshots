@@ -731,7 +731,7 @@ function Contact() {
         <DropNote />
       </div>
       <footer className="footer">
-        <span>© {new Date().getFullYear()} shindigshots</span>
+        <span>© 2015–{new Date().getFullYear()} shindigshots</span>
         <span className="footer__sig">Shindig Shots Photography</span>
       </footer>
     </section>

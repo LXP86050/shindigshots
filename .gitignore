@@ -21,3 +21,6 @@
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
+
+# local staging for raw photo originals (not for commit)
+_incoming/
